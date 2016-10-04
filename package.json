@@ -1,7 +1,7 @@
 {
   "name": "react-router-starter",
   "version": "1.0.0",
-  "description": "React/Router Starter Project",
+  "description": "React/Router Rouf Project",
   "main": "src/index.jsx",
   "scripts": {
     "start": "webpack --colors --progress --watch",
@@ -12,7 +12,7 @@
     "starter",
     "react"
   ],
-  "author": "Keuller Magalhaes",
+  "author": "Guilherme Garcia Alves",
   "license": "GNU",
   "dependencies": {
     "react": "^15.2.1",
