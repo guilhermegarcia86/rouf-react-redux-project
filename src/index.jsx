@@ -16,7 +16,9 @@ const routes = (
     <Route path='/' component={Layout} >
       <Redirect from='/' to='/rouf'/>
 
-      
+      <Route path='dog/cadastro' component={DogCadastro} />
+
+      <Route path='dog/pesquisar' component={Dogs} />
 
      </Route>
   </Route>
