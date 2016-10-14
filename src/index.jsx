@@ -6,17 +6,20 @@ import { Provider } from 'react-redux'
 
 import appStore from './reducers/store'
 
-import App from 'containers/app'
-import Home from 'components/home'
-import Cadastro from 'components/contacts'
+import Layout from './components/layout/layout'
+import DogContainer from 'components/dog-container'
+import DogCadastro from 'components/dog-cadastro'
+import Dogs from 'components/dogs'
 
 const routes = (
-  <Router history={hashHistory}>
-    <Route path='/' component={App}>
-      <IndexRoute component={Home} />
-      <Route path='/contacts' component={Cadastro} />
-    </Route>
-  </Router>
+  <Route>
+    <Route path='/' component={Layout} >
+      <Redirect from='/' to='/rouf'/>
+
+      
+
+     </Route>
+  </Route>
 )
 
 render(
