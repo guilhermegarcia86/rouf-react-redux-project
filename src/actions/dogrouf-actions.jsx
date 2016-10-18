@@ -3,8 +3,8 @@
 import { createSimpleAction } from 'redux-action-helper'
 import { hashHistory } from 'react-router'
 
-export const GET_OPTIONS_GLOBAL = 'GET_OPTIONS_GLOBAL'
-export const getOptionsGlobal = createSimpleAction(GET_OPTIONS_GLOBAL)
+export const GET_DOGS = 'GET_DOGS'
+export const getDogs = createSimpleAction(GET_DOGS)
 export const ADD_DOG = 'ADD_DOG'
 export const addDog = createSimpleAction(ADD_DOG)
 export const EDT_DOG = 'EDT_DOG'

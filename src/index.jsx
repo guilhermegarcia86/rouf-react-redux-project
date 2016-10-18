@@ -7,7 +7,6 @@ import { Provider } from 'react-redux'
 import appStore from './reducers/store'
 
 import Layout from './components/layout/layout'
-import DogContainer from 'components/dog-container'
 import DogCadastro from 'components/dog-cadastro'
 import Dogs from 'components/dogs'
 

@@ -2,7 +2,7 @@ import axios from 'axios'
 import { getOptionsGlobal, addDog, editDog, deleteDog } from './dogrouf-actions'
 import { createAsyncAction } from 'redux-action-helper'
 
-export const apiGetOptionsGlobal = createAsyncAction((dispatch, data) => {
+export const apiGetDogs = createAsyncAction((dispatch, data) => {
   axios.get('api/v1/rouf/full').then((response) => {
     let _data = response.data
     if(_data.status.code == 0){

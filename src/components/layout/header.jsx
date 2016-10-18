@@ -7,7 +7,7 @@ const Header = React.createClass({
         return(
             <div className="w3-top">
                 <ul className="w3-navbar w3-theme w3-top w3-left-align w3-large">
-                    <li><a href="#" className="w3-theme-l1"></a></li>
+                    <li><a href="#" className="w3-theme-l1">LOGO</a></li>
                 </ul>
             </div>
         )
