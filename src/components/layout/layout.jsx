@@ -11,6 +11,7 @@ const Layout = React.createClass({
             <div>
                 <Header/>
                 <div id="main" role="main">
+                {this.props.children}
                 </div>
                 <Footer/>            
             </div>

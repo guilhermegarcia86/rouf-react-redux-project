@@ -1,6 +1,7 @@
 import React from 'react'
 import { reduxForm } from 'redux-form'
 import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
 import { apiGetDogs, apiDeleteDog, apiEditDog, apiAddDog } from '../actions/api-dogrouf-options'
 import { selectDog } from '../actions/dogrouf-actions'
 import _ from 'lodash'
@@ -110,4 +111,4 @@ function mapDispatchToProps(dispatch) {
 function mapStateToProps({ dogs }) {
   return { dogs };
 }
-export default connect(mapStateToProps, null)(Dogs);
+export default connect(mapStateToProps, mapDispatchToProps)(Dogs);

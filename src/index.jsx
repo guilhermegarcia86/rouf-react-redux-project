@@ -1,7 +1,7 @@
 import 'index.css'
 import React from 'react'
 import { render } from 'react-dom'
-import { Route, Router, Redirect, hashHistory } from 'react-router'
+import { Route, Router, Redirect, hashHistory, IndexRoute } from 'react-router'
 import { Provider } from 'react-redux'
 
 import appStore from './reducers/store'
@@ -13,7 +13,7 @@ import Dogs from 'components/dogs'
 const routes = (
   <Route>
     <Route path='/' component={Layout} >
-      <Redirect from='/' to='/pesquisar'/>
+      <IndexRoute component={Dogs}/>
       <Route path='cadastro' component={DogCadastro} />
       <Route path='pesquisar' component={Dogs} />
      </Route>
