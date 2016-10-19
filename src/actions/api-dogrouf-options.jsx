@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { getOptionsGlobal, addDog, editDog, deleteDog } from './dogrouf-actions'
+import { getDogs, addDog, editDog, deleteDog } from './dogrouf-actions'
 import { createAsyncAction } from 'redux-action-helper'
 
 const url = 'http://localhost:9000/'
@@ -7,9 +7,7 @@ const url = 'http://localhost:9000/'
 export const apiGetDogs = createAsyncAction((dispatch, data) => {
   axios.get(`${url}api/v1/rouf/full`).then((response) => {
     let _data = response.data
-    if(_data.status.code == 0){
-      return dispatch(getOptionsGlobal(_data.data))
-    }
+    return dispatch(getDogs(_data))
   }).catch((err) => {
     if (err.message === 'Network Error') {
       swal('Verifique sua conexão.', '', 'warning')

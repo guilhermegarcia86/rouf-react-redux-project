@@ -5,48 +5,52 @@ import { Row, Column, Ibox } from './utils/ui-util'
 
 const displayNone = {'display': 'none'}
 
-const GridLine = React.createClass({
-  onClickShow(e) {
-    e.preventDefault()
-    
+const GridItem = React.createClass({
+
+  onRowClick() {
+     this.props.onEdit(this.props.item)
+  },
+
+  onDelete() {
+    this.props.onDelete(this.props.item)
+  },
+
+  renderButton(disabled) {
+
+    let classes = 'btn btn-xs btn-danger'
+    return disabled
+      ? <button type='button' className={classes} disabled><i className='fa fa-times'/></button>
+      : <button type='button' className={classes} onClick={() => {this.onDelete()}}><i className='fa fa-times'/></button>
   },
 
   render() {
-    const {item, indice} = this.props
-
+    let {item, idx, onRowClick} = this.props
     return (
-      <tr role='row' className={((indice%2)==1)?'odd':'even'}>
-        <td>
-          <FotoDog dog={item} />
-        </td>
-        <td className="sorting_1">{item.dadosDog.nome}<br/><small className="text-muted"><i>{item.dadosPessoais.apelido}</i></small></td>
-        <td>{item.dadosDog.raca}</td>
-        <td>{item.dadosDog.status}</td>
-        <td>{item.dadosDog.idade}</td>
+      <tr className={'success'}>
+        <td></td>
+        <td></td>
+        <td>{item.nome}</td>
+        <td>{item.raca}</td>
+        <td>{item.condicao}</td>
+        <td>{item.idade}</td>
       </tr>
     )
   }
 })
 
-const GridBody = React.createClass({
-  renderList() {
-    let elements = [],
-        items = this.props.items || []
-    items.forEach((item, idx) => {
-      elements.push(<GridLine key={`${idx}-1`} item={item} indice={idx} />)
-    })
-    return elements
-  },
-
-  render() {
-    return (
-      <tbody>{this.renderList()}</tbody>
-    )
-  }
-})
+const GridItems = ({items}) => {
+  return (
+    <tbody>
+      {items.map((item, idx) => {
+         return <GridItem item={item} key={idx} />
+      })}
+    </tbody>
+  )
+}
 
 let DogGrid = ({ model }) => {
-  const orderedItems = _.sortBy(model, {dadosPessoais: 'nome'})
+
+  let orderedItems = _.orderBy(model, 'nome');
 
   return (
     <Ibox title='Dogs' hasFooter={false}>
@@ -67,6 +71,7 @@ let DogGrid = ({ model }) => {
                         <th>Idade</th>
                       </tr>
                     </thead>
+                    <GridItems items={orderedItems} />
                   </table>
                 </div>
               </div>

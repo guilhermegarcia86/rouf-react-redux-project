@@ -19,7 +19,7 @@ let Dogs = React.createClass({
     this.refreshItems()
   },
 
-  refreshItems(idEmpresa) {
+  refreshItems() {
     this.props.apiGetDogs()
   },
 
@@ -81,6 +81,8 @@ let Dogs = React.createClass({
 
   render(){
 
+    console.log('dogs')
+
     const { action } = this.state
     const { dog, dogs } = this.props
 
@@ -95,7 +97,7 @@ let Dogs = React.createClass({
               action={action}/>
       )
       default: return (
-        <Grid cargos={dogs}
+        <Grid model={dogs}
               onAdd={this.onAdd}
               onCancel={this.onCancel}
               onRowClick={this.onRowClick}/>

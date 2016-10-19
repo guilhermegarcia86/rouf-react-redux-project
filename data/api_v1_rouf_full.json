@@ -3,21 +3,33 @@
 		"id": "1",
 	 	"nome": "Rebeca",
 	 	"apelido": "Becks",
-        "status" : "Sem lar",
-        "idade" : "1 ano e 3 meses"
+        "raca" : "Vira-lata",
+        "condicao" : "Sem lar",
+        "idade" : "1 ano e 3 meses",
+        "status" : {
+            "code" : 0
+        }
 	},
 	{
 		"id": "2",
 	 	"nome": "Bianca",
 	 	"apelido": "Bia",
-        "status" : "Adotado",
-        "idade" : "6 meses"
+        "raca" : "Vira-lata",
+        "condicao" : "Adotado",
+        "idade" : "6 meses",
+        "status" : {
+            "code" : 0
+        }
 	},
 	{
 		"id": "3",
 	 	"nome": "Ruth",
 	 	"apelido": "Sem apelido",
-        "status" : "Sem lar",
-        "idade" : "11 meses"
+        "raca" : "Vira-lata",
+        "condicao" : "Sem lar",
+        "idade" : "11 meses",
+        "status" : {
+            "code" : 0
+        }
 	}
 ]
