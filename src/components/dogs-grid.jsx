@@ -24,15 +24,27 @@ const GridItem = React.createClass({
   },
 
   render() {
-    let {item, idx, onRowClick} = this.props
+    let {item, onRowClick} = this.props
     return (
-      <tr className={'success'}>
-        <td></td>
-        <td></td>
-        <td>{item.nome}</td>
-        <td>{item.raca}</td>
-        <td>{item.condicao}</td>
-        <td>{item.idade}</td>
+      <tr className={item.id %2 !== 0 ? 'info' : ''}>
+        <td className="text-center">{item.nome}</td>
+        <td className="text-center">{item.raca}</td>
+        <td className="text-center">{item.condicao}</td>
+        <td className="text-center">{item.idade}</td>
+        <td className="text-center">
+          <Link
+            title="Editar"
+            to={``}
+            className="btn btn-link btn-xs">
+            <i className="glyphicon glyphicon-pencil" />
+          </Link>
+          <Link
+            title="Excluir"
+            to={``}
+            className="btn btn-link btn-xs">
+            <i className="glyphicon glyphicon-remove" />
+          </Link>
+        </td>
       </tr>
     )
   }
@@ -41,8 +53,8 @@ const GridItem = React.createClass({
 const GridItems = ({items}) => {
   return (
     <tbody>
-      {items.map((item, idx) => {
-         return <GridItem item={item} key={idx} />
+      {items.map((item) => {
+         return <GridItem item={item} key={item.id} />
       })}
     </tbody>
   )
@@ -50,33 +62,26 @@ const GridItems = ({items}) => {
 
 let DogGrid = ({ model }) => {
 
-  let orderedItems = _.orderBy(model, 'nome');
-
   return (
     <Ibox title='Dogs' hasFooter={false}>
-      <section id="">
-        <div className="">
-          <article className="">
-            <div className="">
-              <div>
+      <section id="conteudo-grid">
+        <div className="container">
+            <div className="panel">
                 <div className="">
-                  <table id="example" className="" cellSpacing="0" width="100%">
+                  <table id="table-grid" className="table table-bordered table-striped">
                     <thead>
                       <tr>
-                        <th></th>
-                        <th></th>
-                        <th>Nome</th>
-                        <th>Raça</th>
-                        <th>Status</th>
-                        <th>Idade</th>
+                        <th className="text-center col-md-2">Nome</th>
+                        <th className="text-center col-md-2">Raça</th>
+                        <th className="text-center col-md-2">Status</th>
+                        <th className="text-center col-md-2">Idade</th>
+                        <th className="text-center col-md-1"></th>
                       </tr>
                     </thead>
-                    <GridItems items={orderedItems} />
+                    <GridItems items={model} />
                   </table>
-                </div>
               </div>
             </div>
-          </article>
         </div>
       </section>
     </Ibox>

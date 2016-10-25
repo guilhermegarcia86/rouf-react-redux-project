@@ -1,25 +1,17 @@
 import React from 'react'
+import { PageHeader } from 'react-bootstrap';
 import Header from './header'
-import Footer from './footer'
 
 const Layout = React.createClass({
-
     render(){
-
         return(
-
             <div>
-                <Header/>
-                <div id="main" role="main">
-                {this.props.children}
+            <Header/>
+                <div id="page-wrapper" className="pager-wrapper">
+                    <PageHeader></PageHeader>
                 </div>
-                <Footer/>            
             </div>
-
         )
-
     }
-
 })
-
 export default Layout
