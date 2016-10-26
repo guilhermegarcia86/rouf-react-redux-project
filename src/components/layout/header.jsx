@@ -28,8 +28,7 @@ render() {
       <Navbar fluid={true}  style={ {margin: 0} }>
           <Brand>
             <span>
-              <img  alt="Start React" title="Start React" />
-              <span>&nbsp;SB Admin React - </span>
+                <span>ROUF HEADER</span>
                 <button type="button" className="navbar-toggle"  style={{position: 'absolute', right: 0, top: 0}}>
                   <span className="sr-only">Toggle navigation</span>
                   <span className="icon-bar"></span>
